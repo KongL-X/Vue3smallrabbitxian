@@ -1,16 +1,16 @@
 <script setup>
 import { ref } from 'vue'
-import { loginAPI } from '@/apis/user'
 import { useRouter } from 'vue-router'
 import { ElMessage } from 'element-plus'
 import 'element-plus/theme-chalk/el-message.css'
-
+import { useUserStore } from '@/stores/user'
 // 表单数据对象
 const userInfo = ref({
   account: '',
   password: '',
   agree: true
 })
+const userStore = useUserStore()
 const router = useRouter()
 // 规则数据对象
 const rules = {
@@ -37,7 +37,7 @@ const doLogin = () => {
     // 以valid做为判断条件 如果通过校验才执行登录逻辑
     if (valid) {
       // TODO LOGIN
-      await loginAPI({ account, password })
+      await userStore.getUserInfo({ account, password })
       // 1. 提示用户
       ElMessage({ type: 'success', message: '登录成功' })
       // 2. 跳转首页
