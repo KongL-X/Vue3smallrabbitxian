@@ -38,6 +38,8 @@ const addCart = () => {
       attrsText: skuObj.specsText,
       selected: true
     })
+    //重置
+    count.value = 1
   } else {
     //规格没有选 提示用户
     ElMessage.warning('请选择规格')
