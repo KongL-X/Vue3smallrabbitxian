@@ -38,7 +38,6 @@ export const useCartStore = defineStore(
       }
     }
     // 删除购物车
-    // 删除购物车
     const delCart = async (skuId) => {
       if (isLogin.value) {
         // 调用接口实现接口购物车中的删除功能
@@ -51,6 +50,10 @@ export const useCartStore = defineStore(
         const idx = cartList.value.findIndex((item) => skuId === item.skuId)
         cartList.value.splice(idx, 1)
       }
+    }
+    //清除购物车
+    const clearCart = () => {
+      cartList.value = []
     }
     //计算总数量
     const allCount = computed(() =>
@@ -101,7 +104,9 @@ export const useCartStore = defineStore(
       isAll,
       allCheck,
       selectedCount,
-      selectedPrice
+      selectedPrice,
+      clearCart,
+      updataNewList
     }
   },
   {
