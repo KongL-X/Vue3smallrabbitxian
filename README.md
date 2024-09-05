@@ -33,3 +33,23 @@ pnpm build
 ```sh
 pnpm lint
 ```
+
+Vue3小兔鲜电商前台
+业务（亮点）解决方案
+1. 长页面吸顶交互实现
+2. 图片懒加载指令封装
+3. 面板插槽组件等业务通用组件封装
+4. SKU电商组件封装
+5. 通用逻辑函数封装
+6. 路由缓存问题处理
+7. 基于业务逻辑的组件拆分思想
+8. 支付宝三方支付
+
+
+Vue3全家桶
+create-vue
+Pinia
+ElementPlus
+Vue3 + Setup
+Vue-Router
+VueUse
